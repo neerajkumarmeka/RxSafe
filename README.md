@@ -139,7 +139,6 @@ Frequency in the dataset should not be interpreted as a ranking of medication sa
 
 ---
 
-## Architecture
 ## System Architecture
 
 RxSafe follows a layered architecture that separates the user interface, application logic, analytics, and relational data layer.
@@ -249,6 +248,28 @@ search_timestamp
 ```
 
 ---
+## Data Source & Attribution
+
+RxSafe uses drug-drug interaction data obtained from **DDInter**, an open-access drug-drug interaction database.
+
+The current RxSafe database was constructed from selected DDInter downloadable datasets:
+
+- **Code A — Alimentary tract and metabolism**
+- **Code V — Various**
+
+The source data provides DDInter drug identifiers, medication names, interacting drug pairs, and interaction severity classifications. RxSafe processes these records into a normalized SQLite database used for interaction lookup, multi-medication regimen analysis, and aggregate analytics.
+
+The current processed RxSafe dataset contains **1,798 medications** and **48,930 unique interaction records**. These figures represent the selected and deduplicated subset used by RxSafe and should not be interpreted as the size of the complete DDInter database.
+
+### DDInter Reference
+
+Xiong, G., Yang, Z., Yi, J., Wang, N., Wang, L., Zhu, H., Wu, C., Lu, A., Chen, X., Liu, S., Hou, T., & Cao, D. (2022). DDInter: An online drug-drug interaction database towards improving clinical decision-making and patient safety. *Nucleic Acids Research, 50*(D1), D1200–D1207. https://doi.org/10.1093/nar/gkab880
+
+**DDInter website:** https://ddinter.scbdd.com/
+
+DDInter data is distributed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** license. Users of the DDInter-derived data included with this project should comply with the applicable DDInter attribution, non-commercial, and share-alike requirements.
+
+RxSafe is an independent educational portfolio project and is not affiliated with or endorsed by the DDInter development team.
 
 ## Technology Stack
 
@@ -454,7 +475,16 @@ Pharm.D. | M.S. Health Informatics
 Interests include clinical informatics, healthcare data analytics, clinical decision support, database systems, and healthcare software development.
 
 ---
+## Project Name Disclaimer
 
-## License
+RxSafe is an independent educational portfolio project. It is not affiliated with, endorsed by, or associated with RxSafe, LLC or other commercial products or organizations using the RxSafe name.
 
-This project is intended for educational and portfolio use.
+## Licensing
+
+The source code and DDInter-derived data in this repository have different licensing considerations.
+
+The underlying DDInter-derived drug-interaction data is subject to the **CC BY-NC-SA 4.0** terms specified by DDInter.
+
+No separate open-source software license is currently granted for the original RxSafe source code. All rights to the original project code are reserved by the project author unless otherwise stated.
+
+See the **Data Source & Attribution** section above for information about the underlying interaction data.
