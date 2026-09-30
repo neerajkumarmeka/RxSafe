@@ -36,6 +36,32 @@ The current database contains:
   - Major
   - Contraindicated
 
+## Application Preview
+
+### Drug Interaction Checker
+
+Search the medication database and evaluate a selected drug pair for a documented interaction.
+
+![RxSafe Drug Interaction Checker](assets/interaction-checker.png)
+
+### Medication Regimen Analyzer
+
+Analyze multiple medications simultaneously by evaluating every unique drug pair and summarizing documented interaction severity.
+
+![RxSafe Medication Regimen Analyzer](assets/regimen-analyzer.png)
+
+### Interaction Analytics
+
+Explore the size and composition of the RxSafe interaction database.
+
+![RxSafe Analytics Dashboard](assets/analytics-dashboard.png)
+
+### Interaction Severity Distribution
+
+Visualize the distribution of documented interactions across severity categories.
+
+![RxSafe Interaction Analytics](assets/analytics-dashboard-graph.png)
+
 ---
 
 ## Features
