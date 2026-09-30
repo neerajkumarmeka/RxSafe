@@ -2,6 +2,10 @@
 
 ### Drug Interaction Intelligence Platform
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://rxsafe.streamlit.app/)
+
+**Live Application:** https://rxsafe.streamlit.app/
+
 RxSafe is a health informatics and software engineering portfolio project that combines Python, SQL, SQLite, Streamlit, and data analytics to explore documented drug-drug interactions.
 
 The platform allows users to search for interactions between two medications, analyze multi-drug regimens, summarize interaction severity, and explore aggregate patterns within a relational drug interaction database.
