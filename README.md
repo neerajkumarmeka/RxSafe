@@ -140,31 +140,19 @@ Frequency in the dataset should not be interpreted as a ranking of medication sa
 ---
 
 ## Architecture
+## System Architecture
 
-```text
-                   RxSafe
-                     │
-                     ▼
-             Streamlit Interface
-                     │
-                     ▼
-                Python Core
-          ┌──────────┼──────────┐
-          │          │          │
-          ▼          ▼          ▼
-       Checker      Risk     Analytics
-                    Engine
-          │          │          │
-          └──────────┼──────────┘
-                     │
-                     ▼
-              SQLite Database
-          ┌──────────┼──────────┐
-          │          │          │
-        Drugs   Interactions  Severity
-```
+RxSafe follows a layered architecture that separates the user interface, application logic, analytics, and relational data layer.
 
----
+![RxSafe System Architecture](assets/rxsafe-architecture.png)
+
+The Streamlit interface provides medication search, interaction checking, regimen analysis, and database analytics. Requests are processed by three Python modules:
+
+- `checker.py` handles medication lookup and drug-drug interaction queries.
+- `risk_engine.py` evaluates multi-medication regimens and calculates the project-specific RxSafe Risk Index.
+- `analytics.py` performs aggregate SQL queries for database statistics and interaction analytics.
+
+These components query the SQLite database containing the normalized `drugs`, `interactions`, and `severity_levels` tables.
 
 ## Project Evolution
 
