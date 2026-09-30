@@ -3,6 +3,7 @@ from itertools import combinations
 from pathlib import Path
 
 
+# Path to the RxSafe SQLite database
 DATABASE_PATH = (
     Path(__file__).resolve().parent.parent
     / "database"
@@ -37,6 +38,23 @@ def get_drug(drug_name):
         )
 
         return cursor.fetchone()
+
+
+def get_all_drugs():
+    """Return all drugs in the database alphabetically."""
+
+    with get_connection() as conn:
+        cursor = conn.cursor()
+
+        cursor.execute(
+            """
+            SELECT drug_name
+            FROM drugs
+            ORDER BY drug_name
+            """
+        )
+
+        return [row[0] for row in cursor.fetchall()]
 
 
 def check_interaction(drug_a, drug_b):
